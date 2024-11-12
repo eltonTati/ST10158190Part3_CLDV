@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "HOME PAGE  PART 3";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Styling</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .form-title {
+            margin-bottom: 20px;
+            color: #343a40;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            border-radius: 5px;
+        }
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+            border-radius: 5px;
+            width: 100%;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+    </style>
+    <h1>PART 3</h1>
+</head>
+<body>
+
+    <div class="form-container">
+        <h2 class="form-title">Upload Image</h2>
+        <form asp-action="UploadImage" method="post" enctype="multipart/form-data">
+            <input type="file" name="file" />
+            <button type="submit">Upload</button>
+        </form>
+    </div>
+
+
+    <div class="form-container">
+        <h2 class="form-title">Add Customer Profile</h2>
+        <form asp-action="AddCustomerProfile" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="firstName" placeholder="First Name" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="lastName" placeholder="Last Name" />
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" name="email" placeholder="Email" />
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" name="phoneNumber" placeholder="Phone Number" />
+            </div>
+            <button type="submit" class="btn btn-primary">Add Profile</button>
+        </form>
+        <p>@ViewBag.Message</p>
+   </div>
+
+    <div class="form-container">
+        <h2 class="form-title">Process Order</h2>
+        <form asp-action="ProcessOrder" method="post">
+            <div class="form-group">
+                <input type="text" class="form-control" name="orderId" placeholder="Order ID" />
+            </div>
+            <button type="submit" class="btn btn-primary">Process Order</button>
+        </form>
+        <p>@ViewBag.Message</p>
+   </div>
+
+    <div class="form-container">
+        <h2 class="form-title">Upload Contract</h2>
+        <form asp-action="UploadContract" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="file" />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Contract</button>
+        </form>
+        <p>@ViewBag.Message</p>
+       
+    </div>
+    <div class="form-container">
+        <h2 class="form-title">Upload Log</h2>
+        <form asp-action="UploadLog" method="post" enctype="multipart/form-data">
+            <div class="form-group">
+                <input type="file" class="form-control-file" name="file" />
+            </div>
+            <button type="submit" class="btn btn-primary">Upload Log</button>
+        </form>
+        <p>@ViewBag.Message</p>
+ </div>
+
+
+</body>
+</html>
